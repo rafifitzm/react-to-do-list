@@ -15,7 +15,6 @@ const App = () => {
   };
 
   const addTodo = () => {
-    console.log("Adding a todo...");
     // 1. Construct a to-do object based on user input
     const newTodo = { title, done: false };
     // 2. Add it to the todos list
@@ -23,12 +22,22 @@ const App = () => {
     setTitle('');
   };
 
+  const deleteTodo = (index) => {
+    // Bind an event to the delete button that triggers a method.
+    // The method removes the to-do from todos.
+    // changeTodos([...todos].splice(index, 1));
+    const newTodos = todos.filter((_, i) => i !== index);
+    changeTodos(newTodos);
+  };
+
   return (
     <div id="todosContainer">
       <h1>To-Do List</h1>
       <ul>
         {todos.map((todo, index) => (
-          <li key={index}>{todo.title}<input type="checkbox" checked={todo.done}/></li>
+          <li key={index}>{todo.title}<input type="checkbox" checked={todo.done}/>
+            <button type="button" onClick={() => deleteTodo(index)}><i class="fa-solid fa-trash-can"></i></button>
+          </li>
         ))}
       </ul>
       <form>
