@@ -36,7 +36,7 @@ const App = () => {
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>{todo.title}<input type="checkbox" checked={todo.done}/>
-            <button type="button" onClick={() => deleteTodo(index)}><i class="fa-solid fa-trash-can"></i></button>
+            <button type="button" onClick={() => deleteTodo(index)} id="deleteButton"><i class="fa-solid fa-trash-can"></i></button>
           </li>
         ))}
       </ul>
