@@ -1,1 +1,40 @@
 /* Your customized CSS goes here */
+#todosContainer {
+  margin: 32px;
+  padding: 32px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,.2);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+li {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+
+  input[type="checkbox"] {
+    accent-color: aqua;
+  }
+}
+
+button {
+  background-color: aqua;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  margin: 0px 8px;
+}
+
+.deleteButton {
+  background: none;
+  padding: 0px;
+  margin: 0px;
+}
